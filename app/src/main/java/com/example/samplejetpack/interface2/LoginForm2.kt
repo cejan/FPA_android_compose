@@ -48,6 +48,9 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.samplejetpack.Greeting
+import com.example.samplejetpack.ui.theme.SampleJetpackTheme
+
 //import com.whitebatcodes.myloginapplication.MainActivity
 //import com.whitebatcodes.myloginapplication.ui.theme.MyLoginApplicationTheme
 
@@ -225,6 +228,14 @@ fun PasswordField(
         singleLine = true,
         visualTransformation = if (isPasswordVisible) VisualTransformation.None else PasswordVisualTransformation()
     )
+}
+
+@Preview(showBackground = true)
+@Composable
+fun GreetingPreview() {
+    SampleJetpackTheme {
+        LoginForm1()
+    }
 }
 
 

@@ -17,6 +17,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.samplejetpack.interface2.Credentials
 import com.example.samplejetpack.interface2.LoginForm1
 import com.example.samplejetpack.interface2.checkCredentials
@@ -27,10 +28,12 @@ import dagger.hilt.android.AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+        //enableEdgeToEdge()
         setContent {
             //LoginForm1()
             SampleJetpackTheme {
+                val viewModel = hiltViewModel<MyViewModel>()
+                viewModel.fetchData()
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     Greeting(
                         name = "Android",
@@ -46,6 +49,8 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
     val context = LocalContext.current
+
+
 /*
     Text(
         text = "Hello $name!!",

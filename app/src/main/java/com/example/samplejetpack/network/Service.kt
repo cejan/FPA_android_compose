@@ -9,6 +9,9 @@ import retrofit2.http.GET
 interface Service {
     @GET("today")
     suspend fun getQuotesOfTheDay(): Response<List<NetWorkQuotes>>
+
+    @GET("quotes")
+    suspend fun getQuotesList(): List<NetWorkQuotes>
     //suspend fun getQoutesOfThe
 
 }

@@ -11,4 +11,9 @@ class Repository @Inject constructor(
     suspend fun getQuotesOfTheDay(): NetWorkQuotes? {
         return service1.getQuotesOfTheDay().body()?.first()
     }
+
+    suspend fun getQuotesList(): List<NetWorkQuotes> {
+        return service1.getQuotesList()
+    }
+
 }

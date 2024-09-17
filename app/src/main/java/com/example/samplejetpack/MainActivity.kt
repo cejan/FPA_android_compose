@@ -10,9 +10,15 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
@@ -22,25 +28,34 @@ import com.example.samplejetpack.interface2.Credentials
 import com.example.samplejetpack.interface2.LoginForm1
 import com.example.samplejetpack.interface2.checkCredentials
 import com.example.samplejetpack.ui.theme.SampleJetpackTheme
+import com.example.samplejetpack.view.CardScreen
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         //enableEdgeToEdge()
         setContent {
+            val viewModel = hiltViewModel<MyViewModel>()
             //LoginForm1()
             SampleJetpackTheme {
-                val viewModel = hiltViewModel<MyViewModel>()
-                viewModel.fetchData()
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-
+                Surface(
+                    modifier = Modifier.fillMaxSize(),
+                    //color = MaterialTheme.colors.background
+                ) {
+                    CardScreen(viewModel)
                 }
+                //viewModel.findbyID(1).observ
+                /*Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                    CardScreen(viewModel)
+                    *//*Greeting(
+                        name = "Android 1",
+                        modifier = Modifier.padding(innerPadding)
+                    )*//*
+
+                }*/
             }
         }
     }
@@ -51,13 +66,18 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
     val context = LocalContext.current
 
 
-/*
-    Text(
-        text = "Hello $name!!",
-        modifier = modifier
-    )*/
+    var name1 by remember {
+        mutableStateOf("")
+    }
 
-    Button(
+    //name1 = viewModel.findbyID(1).value.toString()
+
+    Text(
+        text = name1,
+        modifier = modifier
+    )
+
+    /*Button(
         onClick = {
             Toast.makeText(context, "clicked!", Toast.LENGTH_SHORT).show()
             // if (!checkCredentials(credentials, context)) credentials = Credentials()
@@ -67,7 +87,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
         modifier = Modifier.fillMaxWidth()
     ) {
         Text("toast")
-    }
+    }*/
 }
 
 @Preview(showBackground = true)

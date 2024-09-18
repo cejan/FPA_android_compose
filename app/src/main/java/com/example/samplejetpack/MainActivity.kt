@@ -28,6 +28,7 @@ import com.example.samplejetpack.interface2.Credentials
 import com.example.samplejetpack.interface2.LoginForm1
 import com.example.samplejetpack.interface2.checkCredentials
 import com.example.samplejetpack.ui.theme.SampleJetpackTheme
+import com.example.samplejetpack.view.AllQoutes
 import com.example.samplejetpack.view.CardScreen
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -45,7 +46,8 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     //color = MaterialTheme.colors.background
                 ) {
-                    CardScreen(viewModel)
+                    AllQoutes(viewModel)
+                    //CardScreen(viewModel)
                 }
                 //viewModel.findbyID(1).observ
                 /*Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->

@@ -76,11 +76,6 @@ fun UserCard(userDetail: String, qoutes: String) {
     }
 }
 
-/**
- * Composable function for displaying a RecyclerView of user cards.
- *
- * @param userDetails The list of user data sources to populate the RecyclerView.
- */
 @Composable
 fun RecyclerView(userDetails: List<NetWorkQuotes>) {
     LazyColumn {

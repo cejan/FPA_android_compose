@@ -29,6 +29,11 @@ class MyViewModel @Inject constructor(
         return repository.getQuotesOfTheDay()
     }*/
 
+    init{
+
+        fetchCardList()
+    }
+
     fun fetchCardList() {
         viewModelScope.launch {
             try {

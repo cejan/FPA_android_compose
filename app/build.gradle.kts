@@ -83,6 +83,16 @@ dependencies {
     kapt ("com.squareup.moshi:moshi-kotlin-codegen:1.15.1")
 
     implementation("io.coil-kt:coil-compose:2.7.0")
+
+    //room
+    val room_version = "2.6.1"
+
+    implementation("androidx.room:room-runtime:$room_version")
+    annotationProcessor("androidx.room:room-compiler:$room_version")
+    kapt("androidx.room:room-compiler:$room_version")
+    implementation("androidx.room:room-ktx:$room_version")
+    // To use Kotlin Symbol Processing (KSP)
+    //ksp("androidx.room:room-compiler:$room_version")
 }
 
 kapt {

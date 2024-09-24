@@ -5,6 +5,7 @@ import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -14,15 +15,20 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.colorResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.samplejetpack.interface2.Credentials
 import com.example.samplejetpack.interface2.LoginForm1
@@ -30,6 +36,7 @@ import com.example.samplejetpack.interface2.checkCredentials
 import com.example.samplejetpack.ui.theme.SampleJetpackTheme
 import com.example.samplejetpack.view.AllQoutes
 import com.example.samplejetpack.view.CardScreen
+import com.example.samplejetpack.view.bottomnav.BottomNav
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -39,14 +46,19 @@ class MainActivity : ComponentActivity() {
 
         //enableEdgeToEdge()
         setContent {
-            val viewModel = hiltViewModel<MyViewModel>()
+            //val viewModel = hiltViewModel<MyViewModel>()
             //LoginForm1()
             SampleJetpackTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     //color = MaterialTheme.colors.background
                 ) {
-                    AllQoutes(viewModel)
+                    Column {
+
+                        // AllQoutes(viewModel)
+                        BottomNav()
+                    }
+
                     //CardScreen(viewModel)
                 }
                 //viewModel.findbyID(1).observ
@@ -90,6 +102,16 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
     ) {
         Text("toast")
     }*/
+}
+
+
+@Composable
+fun TopBar() {
+    /*TopAppBar(
+        title = { Text(text = stringResource(R.string.app_name), fontSize = 18.sp) },
+        //backgroundColor = colorResource(id = R.color.purple_500),
+        //contentColor = Color.White
+    )*/
 }
 
 @Preview(showBackground = true)

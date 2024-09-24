@@ -29,16 +29,18 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import coil.compose.rememberAsyncImagePainter
 import coil.request.ImageRequest
 import coil.size.Size
 import com.example.samplejetpack.MyViewModel
 import com.example.samplejetpack.R
 import com.example.samplejetpack.network.models.NetWorkQuotes
+import com.example.samplejetpack.view.bottomnav.BottomNav
 
 
 @Composable
-fun AllQoutes(viewModel: MyViewModel) {
+fun AllQoutes(/*viewModel: MyViewModel,*/ viewModel: MyViewModel = hiltViewModel()) {
     val cardsGreeting by viewModel.cardsList.observeAsState(null)
 
     LaunchedEffect(Unit) {
@@ -46,6 +48,10 @@ fun AllQoutes(viewModel: MyViewModel) {
     }
 
     Column {
+        Text(
+            text = "List of Something",
+            //modifier = modifier
+        )
         if (cardsGreeting == null) {
             // Show loading indicator or placeholder
             Text(text = "Loading...")
@@ -55,6 +61,8 @@ fun AllQoutes(viewModel: MyViewModel) {
             // Display the list of credit cards
             //CreditCardItem(creditCards!!)
         }
+
+
     }
 }
 
@@ -86,6 +94,7 @@ fun UserCard(userDetail: String, qoutes: String) {
         //elevation = 4.dp
     ) {
     Row{
+
         Image(
         painter = painter,
         contentDescription = "image",

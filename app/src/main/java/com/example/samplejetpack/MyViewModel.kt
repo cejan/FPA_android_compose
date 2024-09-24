@@ -30,7 +30,6 @@ class MyViewModel @Inject constructor(
     }*/
 
     init{
-
         fetchCardList()
     }
 

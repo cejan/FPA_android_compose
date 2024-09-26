@@ -78,6 +78,18 @@ fun LoadingImageFromInternetCoil() {
 }
 */
 
+
+@Composable
+fun RecyclerView(userDetails: List<NetWorkQuotes>) {
+    LazyColumn {
+        items(items = userDetails) {
+            UserCard(it.a, it.q)
+        }
+    }
+}
+
+
+
 @Composable
 fun UserCard(userDetail: String, qoutes: String) {
 
@@ -116,11 +128,3 @@ fun UserCard(userDetail: String, qoutes: String) {
     }
 }
 
-@Composable
-fun RecyclerView(userDetails: List<NetWorkQuotes>) {
-    LazyColumn {
-        items(items = userDetails) {
-            UserCard(it.a, it.q)
-        }
-    }
-}

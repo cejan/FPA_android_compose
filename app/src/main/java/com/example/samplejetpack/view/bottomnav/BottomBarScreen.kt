@@ -20,6 +20,13 @@ sealed class BottomBarScreen(
         icon_focused = R.drawable.ic_bottom_home_focused
     )
 
+    object Fertilizer: BottomBarScreen(
+        route = "Fertilizer",
+        title = "Fertilizer",
+        icon = R.drawable.ic_bottom_profile,
+        icon_focused = R.drawable.ic_bottom_profile_focused
+    )
+
     // for report
     object Report: BottomBarScreen(
         route = "report",

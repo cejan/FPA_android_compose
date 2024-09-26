@@ -12,12 +12,10 @@ import androidx.compose.ui.unit.sp
 
 @Composable
 fun HomeScreen() {
-
     Column(
         modifier = Modifier.fillMaxSize()
-            .background(Color.LightGray)
+            .background(Color.Transparent)
     ) {
         Text(text = "Home Screen", fontSize = 20.sp)
     }
-
 }

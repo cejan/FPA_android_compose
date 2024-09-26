@@ -25,6 +25,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".view.screens.ProfileView" />
+        <activity android:name=".view.fertilizer.FertilizerView" />
     </application>
 
 </manifest>

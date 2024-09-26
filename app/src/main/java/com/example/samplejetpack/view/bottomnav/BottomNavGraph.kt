@@ -9,6 +9,7 @@ import compose.material.theme.screens.ProfileScreen
 import compose.material.theme.screens.ReportScreen*/
 import com.example.samplejetpack.MyViewModel
 import com.example.samplejetpack.view.AllQoutes
+import com.example.samplejetpack.view.screens.FertilizerScreen
 import com.example.samplejetpack.view.screens.HomeScreen
 import com.example.samplejetpack.view.screens.ProfileScreen
 import com.example.samplejetpack.view.screens.ReportScreen
@@ -22,9 +23,14 @@ fun BottomNavGraph(
         startDestination = BottomBarScreen.Home.route
     ) {
         composable(route = BottomBarScreen.Home.route) {
-            //HomeScreen()
-            AllQoutes()
+            HomeScreen()
+            //AllQoutes()
         }
+
+        composable(route = BottomBarScreen.Fertilizer.route) {
+            FertilizerScreen()
+        }
+
         composable(route = BottomBarScreen.Report.route) {
             ReportScreen()
         }

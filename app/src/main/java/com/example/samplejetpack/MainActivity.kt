@@ -51,13 +51,14 @@ class MainActivity : ComponentActivity() {
             SampleJetpackTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
-                    //color = MaterialTheme.colors.background
+                    color = Color.White
                 ) {
-                    Column {
+                    BottomNav()
+                    /*Column {
 
                         // AllQoutes(viewModel)
-                        BottomNav()
-                    }
+
+                    }*/
 
                     //CardScreen(viewModel)
                 }

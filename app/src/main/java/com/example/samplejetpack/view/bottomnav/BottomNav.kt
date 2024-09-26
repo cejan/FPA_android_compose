@@ -51,6 +51,7 @@ fun BottomNav() {
 fun BottomBar(navController: NavHostController) {
     val screens = listOf(
         BottomBarScreen.Home,
+        BottomBarScreen.Fertilizer,
         BottomBarScreen.Report,
         BottomBarScreen.Profile
     )
@@ -131,10 +132,6 @@ fun RowScope.AddItem(
                 )
 
             }
-
-
-
-
 
 
             AnimatedVisibility(visible = selected) {

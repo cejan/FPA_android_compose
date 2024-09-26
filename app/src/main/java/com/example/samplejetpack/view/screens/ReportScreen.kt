@@ -12,10 +12,9 @@ import androidx.compose.ui.unit.sp
 
 @Composable
 fun ReportScreen() {
-
     Column(
         modifier = Modifier.fillMaxSize()
-            .background(Color.LightGray)
+            .background(Color.Transparent)
     ) {
         Text(text = "Report Screen", fontSize = 20.sp)
     }

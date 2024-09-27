@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Badge
 import androidx.compose.material3.BadgedBox
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 /*import androidx.compose.material.Badge
 import androidx.compose.material.BadgedBox
@@ -16,6 +17,7 @@ import androidx.compose.material.Text*/
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
@@ -32,15 +34,26 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.samplejetpack.MyViewModel
+import com.example.samplejetpack.TopBar
+import com.example.samplejetpack.view.CenterAlignedTopAppBar
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun BottomNav() {
     val navController = rememberNavController()
 
     Scaffold(
-        bottomBar = { BottomBar(navController = navController) }
+        topBar = {
+            CenterAlignedTopAppBar()
+            /*TopAppBar(
+            title = { Text( text = "Tittle") }
+        )*/ },
+        bottomBar = { BottomBar(navController = navController) },
+
     ) {
+
         Modifier.padding(it)
+        //Modifier.padding(top = 60.dp)
         BottomNavGraph(
             navController = navController
         )
@@ -87,10 +100,10 @@ fun RowScope.AddItem(
     val selected = currentDestination?.hierarchy?.any { it.route == screen.route } == true
 
     val background =
-        if (selected) MaterialTheme.colorScheme.primary.copy(alpha = 0.6f) else Color.Transparent
+        if (selected) MaterialTheme.colorScheme.primaryContainer/*.copy(alpha = 0.6f)*/ else Color.Transparent
 
     val contentColor =
-        if (selected) Color.White else Color.Black
+        if (selected) /*Color.White*/MaterialTheme.colorScheme.primary else Color.Black
 
     Box(
         modifier = Modifier
@@ -132,8 +145,6 @@ fun RowScope.AddItem(
                 )
 
             }
-
-
             AnimatedVisibility(visible = selected) {
                 Text(
                     text = screen.title,

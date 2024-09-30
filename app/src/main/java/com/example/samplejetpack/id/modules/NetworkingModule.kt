@@ -7,14 +7,14 @@ import com.example.samplejetpack.fertilizer.database.FertilizerDao
 import com.example.samplejetpack.fertilizer.network.RetrofitInterface
 import com.example.samplejetpack.network.Service
 
-import com.squareup.moshi.Moshi
 
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import retrofit2.Retrofit
-import retrofit2.converter.moshi.MoshiConverterFactory
+import retrofit2.converter.gson.GsonConverterFactory
+
 import javax.inject.Singleton
 
 //import retrofit2.converter.moshi.MoshiConverterFactory
@@ -30,7 +30,8 @@ class NetworkingModule {
     fun providesRetrofit(): Retrofit{
         return Retrofit.Builder()
             .baseUrl("https://zenquotes.io/api/")
-            .addConverterFactory(MoshiConverterFactory.create())
+            //.addConverterFactory(MoshiConverterFactory.create())
+            .addConverterFactory(GsonConverterFactory.create())
             .build()
     }
     //@Singleton

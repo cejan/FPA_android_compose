@@ -79,9 +79,12 @@ dependencies {
     /*implementation(libs.retrofit)
     implementation(libs.converter.moshi)*/
     implementation("com.squareup.retrofit2:retrofit:2.11.0")
-    implementation("com.squareup.retrofit2:converter-moshi:2.11.0")
-    implementation("com.squareup.moshi:moshi:1.15.1")
-    kapt ("com.squareup.moshi:moshi-kotlin-codegen:1.15.1")
+    //implementation("com.squareup.retrofit2:converter-moshi:2.11.0")
+    //implementation("com.squareup.moshi:moshi:1.15.1")
+    implementation("com.squareup.retrofit2:converter-gson:2.11.0")
+    implementation("com.google.code.gson:gson:2.11.0")
+
+    //kapt ("com.squareup.moshi:moshi-kotlin-codegen:1.15.1")
 
     implementation("io.coil-kt:coil-compose:2.7.0")
 

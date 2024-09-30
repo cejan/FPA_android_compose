@@ -6,12 +6,28 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Text
 //import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.sp
+import androidx.hilt.navigation.compose.hiltViewModel
+import com.example.samplejetpack.fertilizer.FertilizerViewModel
+
+//import com.example.samplejetpack.MyViewModel
 
 @Composable
-fun HomeScreen() {
+fun HomeScreen(
+    //viewModel: FertilizerViewModel = hiltViewModel()
+)
+{
+    //val cardsGreeting by viewModel..observeAsState(null)
+
+    /*LaunchedEffect(Unit) {
+        viewModel.makeApiCall()
+    }*/
+
     Column(
         modifier = Modifier.fillMaxSize()
             .background(Color.Transparent)

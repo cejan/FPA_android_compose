@@ -15,7 +15,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class MyViewModel @Inject constructor(
-    private val repository: Repository
+    private val repository: Repository,
 ):  ViewModel(){
  /*   private val _creditCards = MutableLiveData<CreditCardResponse>()
     val creditCards: LiveData<CreditCardResponse> = _creditCards*/
@@ -31,7 +31,21 @@ class MyViewModel @Inject constructor(
 
     init{
         fetchCardList()
+        //fetchCardList1()
     }
+
+   /* fun fetchCardList1() {
+        viewModelScope.launch {
+            try {
+                val cards1 = Fertrepository.makeApiCall("asd")
+                //_CardsList.value = cards1.toString
+                //Log.e("FetchCreditCard", _creditCards.value.toString());
+            } catch (e: Exception) {
+                // Handle error
+                Log.e("FetchCreditCard", e.message.toString());
+            }
+        }
+    }*/
 
     fun fetchCardList() {
         viewModelScope.launch {

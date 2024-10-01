@@ -21,6 +21,11 @@ class FertilizerRepository @Inject constructor(
         return fertilizerDao.getAllQuotes()
     }
 
+   /* fun delAllRecord() {
+        return fertilizerDao.deleteAllRecord()
+    }*/
+
+
     fun insertRecord(FertilizerData: QuotesDB) {
         fertilizerDao.insertQuotes(FertilizerData)
     }
@@ -35,6 +40,7 @@ class FertilizerRepository @Inject constructor(
                 Log.e("--------------",response.toString())
                 if(response.isSuccessful) {
                     //appDao.deleteAllRecords()
+                    fertilizerDao.deleteAllRecord()
                     response.body()?.forEach {
                         insertRecord(it)
                     }
@@ -45,7 +51,6 @@ class FertilizerRepository @Inject constructor(
                 Log.e("warning","sample",t)
             }
         })
-
 
     }
 

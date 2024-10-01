@@ -8,11 +8,9 @@ import com.example.samplejetpack.fertilizer.pojo.QuotesDB
 
 //import com.demo.paging3withroom.model.Fertilizer
 
-@Database(entities = [QuotesDB::class], version = 1, exportSchema = false)
+@Database(entities = [QuotesDB::class], version = 2, exportSchema = false)
 abstract class FertDatabase: RoomDatabase() {
-
     abstract fun getAppDao(): FertilizerDao
-
     companion object {
         private var DB_INSTANCE: FertDatabase? = null
 

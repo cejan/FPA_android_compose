@@ -18,4 +18,7 @@ interface FertilizerDao {
 
     @Delete
     fun deleteQuote(quotes: QuotesDB)
+
+    @Query("DELETE FROM Quotes_table")
+    fun deleteAllRecord()
 }

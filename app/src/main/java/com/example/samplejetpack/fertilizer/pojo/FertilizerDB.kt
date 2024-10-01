@@ -9,11 +9,11 @@ data class QuotesDB(
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
     val quotesId: Int = 0,
-    @ColumnInfo(name = "q")
+    @ColumnInfo(name = "Quotes")
     val q: String?,
-    @ColumnInfo(name = "a")
+    @ColumnInfo(name = "Author")
     val a: String?,
-    @ColumnInfo(name = "h")
+    @ColumnInfo(name = "html")
     val h: String?
 )
 

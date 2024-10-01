@@ -14,6 +14,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.samplejetpack.fertilizer.FertilizerViewModel
+import com.example.samplejetpack.view.ButtomScafold2
+import com.example.samplejetpack.view.SimpleBottomSheetScaffoldSample
 
 //import com.example.samplejetpack.MyViewModel
 
@@ -32,6 +34,9 @@ fun HomeScreen(
         modifier = Modifier.fillMaxSize()
             .background(Color.Transparent)
     ) {
-        Text(text = "Home Screen", fontSize = 20.sp)
+        //Text(text = "Home Screen", fontSize = 20.sp)
+        //SimpleBottomSheetScaffoldSample()
+
+        ButtomScafold2()
     }
 }

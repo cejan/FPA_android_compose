@@ -98,6 +98,8 @@ dependencies {
     // To use Kotlin Symbol Processing (KSP)
     //ksp("androidx.room:room-compiler:$room_version")
 
+    implementation("com.valentinilk.shimmer:compose-shimmer:1.3.1")
+
 
 }
 

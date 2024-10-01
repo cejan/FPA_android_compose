@@ -1,6 +1,7 @@
 package com.example.samplejetpack.view
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -25,6 +26,7 @@ import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -37,6 +39,9 @@ import com.example.samplejetpack.MyViewModel
 import com.example.samplejetpack.R
 import com.example.samplejetpack.network.models.NetWorkQuotes
 import com.example.samplejetpack.view.bottomnav.BottomNav
+import com.valentinilk.shimmer.ShimmerBounds
+import com.valentinilk.shimmer.rememberShimmer
+import com.valentinilk.shimmer.shimmer
 
 
 @Composable
@@ -50,11 +55,15 @@ fun AllQoutes(/*viewModel: MyViewModel,*/ viewModel: MyViewModel = hiltViewModel
     Column {
         Text(
             text = "List of Something",
-            //modifier = modifier
+
         )
         if (cardsGreeting == null) {
             // Show loading indicator or placeholder
-            Text(text = "Loading...")
+            val shimmerInstance = rememberShimmer(shimmerBounds = ShimmerBounds.Window)
+            Row(
+                modifier = Modifier.background(Color.LightGray).shimmer(shimmerInstance).background(MaterialTheme.colorScheme.primaryContainer).fillMaxWidth().padding(top = 6.dp)
+            ) {  Text(text = "Loading...") }
+
         } else {
             RecyclerView(cardsGreeting!!)
             //Text(text = cardsGreeting!!)

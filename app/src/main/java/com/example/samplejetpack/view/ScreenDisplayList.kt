@@ -59,10 +59,11 @@ fun AllQoutes(/*viewModel: MyViewModel,*/ viewModel: MyViewModel = hiltViewModel
         )
         if (cardsGreeting == null) {
             // Show loading indicator or placeholder
-            val shimmerInstance = rememberShimmer(shimmerBounds = ShimmerBounds.Window)
+            UserCardPlaceHolder()
+            /*val shimmerInstance = rememberShimmer(shimmerBounds = ShimmerBounds.Window)
             Row(
                 modifier = Modifier.background(Color.LightGray).shimmer(shimmerInstance).background(MaterialTheme.colorScheme.primaryContainer).fillMaxWidth().padding(top = 6.dp)
-            ) {  Text(text = "Loading...") }
+            ) {  Text(text = "Loading...") }*/
 
         } else {
             RecyclerView(cardsGreeting!!)
@@ -97,6 +98,33 @@ fun RecyclerView(userDetails: List<NetWorkQuotes>) {
     }
 }
 
+@Composable
+fun UserCardPlaceHolder() {
+    val shimmerInstance = rememberShimmer(shimmerBounds = ShimmerBounds.Window)
+    Card(
+        modifier = Modifier.padding(horizontal = 8.dp, vertical = 5.dp).fillMaxWidth(),
+        shape = RoundedCornerShape(CornerSize(10.dp))//,
+        //elevation = 4.dp
+    ) {
+        Row{
+            Card(
+                modifier = Modifier
+                    .padding(8.dp)
+                    .size(60.dp)
+                    .clip(RoundedCornerShape(CornerSize(6.dp)))
+                    .align(Alignment.CenterVertically)
+            ){
+            }
+            Column(modifier = Modifier.padding(5.dp)) {
+
+                Text(text = "", modifier = Modifier.background(Color.LightGray).shimmer(shimmerInstance).background(MaterialTheme.colorScheme.primaryContainer).fillMaxWidth().padding(10.dp, 10.dp))
+
+                Text(text = "", modifier = Modifier.background(Color.LightGray).shimmer(shimmerInstance).background(MaterialTheme.colorScheme.primaryContainer).fillMaxWidth().padding(10.dp, 10.dp))
+
+            }}
+
+    }
+}
 
 
 @Composable

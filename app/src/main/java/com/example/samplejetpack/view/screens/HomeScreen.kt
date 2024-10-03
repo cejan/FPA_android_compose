@@ -17,6 +17,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.viewinterop.AndroidView
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.samplejetpack.fertilizer.FertilizerViewModel
 import com.example.samplejetpack.view.ButtomScafold2
@@ -44,8 +45,6 @@ fun HomeScreen(
     ) {
         //Text(text = "Home Screen", fontSize = 20.sp)
         //SimpleBottomSheetScaffoldSample()
-
-
         ButtomScafold2()
     }
 }

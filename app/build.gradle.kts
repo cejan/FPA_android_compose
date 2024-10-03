@@ -50,7 +50,12 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
+
+
 }
+
+
+
 
 
 dependencies {
@@ -65,6 +70,9 @@ dependencies {
     implementation(libs.androidx.material3)
     implementation(libs.androidx.runtime.livedata)
     implementation(libs.androidx.appcompat)
+    implementation(libs.material)
+    implementation(libs.androidx.activity)
+    implementation(libs.androidx.constraintlayout)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -98,7 +106,15 @@ dependencies {
     // To use Kotlin Symbol Processing (KSP)
     //ksp("androidx.room:room-compiler:$room_version")
 
+    //shimmer loading lib
     implementation("com.valentinilk.shimmer:compose-shimmer:1.3.1")
+
+    //anyChartView
+    //implementation("com.github.AnyChart:AnyChart-Android:1.1.5")
+
+    implementation ("com.github.PhilJay:MPAndroidChart-Realm:v3.0.3@aar")
+    implementation ("com.github.PhilJay:MPAndroidChart:v3.0.3")
+
 
 
 }

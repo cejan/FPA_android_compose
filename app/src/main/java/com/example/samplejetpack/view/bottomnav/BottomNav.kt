@@ -44,7 +44,7 @@ fun BottomNav() {
 
     Scaffold(
         topBar = {
-            CenterAlignedTopAppBar()
+            //CenterAlignedTopAppBar()
             /*TopAppBar(
             title = { Text( text = "Tittle") }
         )*/ },

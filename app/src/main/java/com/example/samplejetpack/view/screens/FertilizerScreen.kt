@@ -40,6 +40,7 @@ import coil.compose.rememberAsyncImagePainter
 import coil.request.ImageRequest
 import coil.size.Size
 import com.example.samplejetpack.R
+//import com.example.samplejetpack.dashboard.ReportsView2
 import com.example.samplejetpack.ui.theme.SampleJetpackTheme
 import com.example.samplejetpack.view.fertilizer.FertilizerView
 
@@ -48,6 +49,8 @@ import com.example.samplejetpack.view.fertilizer.FertilizerView
 fun FertilizerScreen() {
     val context = LocalContext.current
     val intent1 = Intent(context.getActivityOrNull(), FertilizerView::class.java)
+    //val intent2 = Intent(context, ReportsView2::class.java)
+
     /*val painter = rememberAsyncImagePainter(
         model = ImageRequest.Builder(LocalContext.current)
             .data("https://fastly.picsum.photos/id/250/200/200.jpg?hmac=23TaEG1txY5qYZ70amm2sUf0GYKo4v7yIbN9ooyqWzs")
@@ -96,8 +99,8 @@ fun FertilizerScreen() {
             modifier = Modifier.padding(horizontal = 8.dp, vertical = 5.dp).fillMaxWidth(),
             shape = RoundedCornerShape(CornerSize(10.dp)),
             onClick = {
-                //context.startActivity(intent1)
-                Toast.makeText(context,"This is Toast: Card Clicked", Toast.LENGTH_SHORT).show()
+                //context.startActivity(intent2)
+                //Toast.makeText(context,"This is Toast: Card Clicked", Toast.LENGTH_SHORT).show()
             }
         ) {
             Row(modifier = Modifier.background(MaterialTheme.colorScheme.primaryContainer).fillMaxWidth()){

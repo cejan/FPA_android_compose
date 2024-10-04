@@ -44,7 +44,7 @@ fun BottomNav() {
 
     Scaffold(
         topBar = {
-            //CenterAlignedTopAppBar()
+            CenterAlignedTopAppBar()
             /*TopAppBar(
             title = { Text( text = "Tittle") }
         )*/ },
@@ -124,26 +124,24 @@ fun RowScope.AddItem(
             horizontalArrangement = Arrangement.spacedBy(4.dp)
         ) {
 
-
-            //* if menu title : Report means we will show badge
             if(screen.title=="Report"){ // with badge
                 BadgedBox(badge = { Badge { Text("6") } }) {
+
                     Icon(
                         painter = painterResource(id = if (selected) screen.icon_focused else screen.icon),
                         contentDescription = "icon",
                         tint = contentColor
                     )
+
                 }
 
             }
             else{
-
                 Icon(
                     painter = painterResource(id = if (selected) screen.icon_focused else screen.icon),
                     contentDescription = "icon",
                     tint = contentColor
                 )
-
             }
             AnimatedVisibility(visible = selected) {
                 Text(

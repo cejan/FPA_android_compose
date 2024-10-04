@@ -2,23 +2,18 @@ package com.example.samplejetpack.view
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CornerSize
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -28,17 +23,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import coil.compose.rememberAsyncImagePainter
 import coil.request.ImageRequest
 import coil.size.Size
 import com.example.samplejetpack.MyViewModel
-import com.example.samplejetpack.R
 import com.example.samplejetpack.network.models.NetWorkQuotes
-import com.example.samplejetpack.view.bottomnav.BottomNav
 import com.valentinilk.shimmer.ShimmerBounds
 import com.valentinilk.shimmer.rememberShimmer
 import com.valentinilk.shimmer.shimmer
@@ -54,6 +45,7 @@ fun AllQoutes(/*viewModel: MyViewModel,*/ viewModel: MyViewModel = hiltViewModel
 
     Column {
         Text(
+
             text = "List of Something",
 
         )
@@ -64,15 +56,12 @@ fun AllQoutes(/*viewModel: MyViewModel,*/ viewModel: MyViewModel = hiltViewModel
             Row(
                 modifier = Modifier.background(Color.LightGray).shimmer(shimmerInstance).background(MaterialTheme.colorScheme.primaryContainer).fillMaxWidth().padding(top = 6.dp)
             ) {  Text(text = "Loading...") }*/
-
         } else {
             RecyclerView(cardsGreeting!!)
             //Text(text = cardsGreeting!!)
             // Display the list of credit cards
             //CreditCardItem(creditCards!!)
         }
-
-
     }
 }
 
@@ -87,7 +76,6 @@ fun LoadingImageFromInternetCoil() {
     // [END android_compose_images_load_internet_coil]
 }
 */
-
 
 @Composable
 fun RecyclerView(userDetails: List<NetWorkQuotes>) {
@@ -154,7 +142,6 @@ fun UserCard(userDetail: String, qoutes: String) {
             .align(Alignment.CenterVertically)
         )
         Column(modifier = Modifier.padding(5.dp)) {
-
 
             Text(text = "${userDetail}:", modifier = Modifier.padding(10.dp, 10.dp))
 

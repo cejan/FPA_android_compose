@@ -44,13 +44,14 @@ fun CenterAlignedTopAppBar() {
                 Toast.makeText(context,"Toast back icon", Toast.LENGTH_SHORT).show()
             }) {
                 Icon(
-                    imageVector = Icons.AutoMirrored.Filled.ArrowBack,
+                    //imageVector = Icons.AutoMirrored.Filled.ArrowBack,
+                    imageVector = Icons.Filled.Menu,
                     contentDescription = "Localized description",
                     tint = MaterialTheme.colorScheme.primary,
                 )
             }
         },
-        actions = {
+       /* actions = {
             IconButton(onClick = {
                 Toast.makeText(context,"Toast Search icon", Toast.LENGTH_SHORT).show()
             }) {
@@ -60,7 +61,7 @@ fun CenterAlignedTopAppBar() {
                     tint = MaterialTheme.colorScheme.primary,
                 )
             }
-        },
+        },*/
         scrollBehavior = scrollBehavior,
     )
 }

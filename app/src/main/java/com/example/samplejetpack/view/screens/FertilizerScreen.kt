@@ -114,7 +114,7 @@ fun FertilizerScreen() {
                         .align(Alignment.CenterVertically)
                 )
                 Text(
-                    text = "Toast",
+                    text = "Product List",
                     modifier = Modifier.padding( 10.dp).wrapContentHeight(align = Alignment.CenterVertically),
                     color = MaterialTheme.colorScheme.primary,
                     fontSize = 35.sp,
@@ -124,14 +124,7 @@ fun FertilizerScreen() {
 
         }
 
-        /*Button(onClick = {  Toast.makeText(context,"Toast text ", Toast.LENGTH_SHORT).show()}) {
-            Text("toast sample")
-        }*/
-        /*Button(onClick = {
-            context.startActivity(intent1)
-        }) {
-            Text("Open List")
-        }*/
+
     }
 
 }
